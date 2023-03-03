@@ -1,0 +1,103 @@
+@import 'src/styles/variables';
+
+.calendar {
+  width: 116px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__button {
+    width: 7px;
+    height: 10px;
+    padding: 0;
+    display: flex;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+
+    &-icon {
+      fill: $blue-ad;
+      transition: fill $transition;
+
+      &:hover {
+        fill: $blue-00;
+      }
+    }
+
+    &--left {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__title {
+    color: $blue-00;
+    font-size: 14px;
+
+    &-icon {
+      display: block;
+      fill: $blue-ad;
+      transition: fill $transition;
+    }
+
+    &-box {
+      display: flex;
+      align-items: center;
+      column-gap: 8px;
+      cursor: pointer;
+
+      &:hover {
+        .calendar__title-icon {
+          fill: $blue-00;
+        }
+      }
+    }
+  }
+
+  &__select {
+    position: absolute;
+    top: 28px;
+    right: 0;
+    width: 204px;
+    background-color: $white;
+    border: 1px solid $blue-ea;
+    border-radius: 4px;
+    box-shadow: 0 0 26px rgba($blue-e9, 0.8);
+    opacity: 0;
+    pointer-events: none;
+    cursor: pointer;
+
+    &--open {
+      z-index: 1;
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    &-item {
+      padding: 6px 20px;
+      font-size: 14px;
+      color: $blue-89;
+      line-height: 28px;
+      transition: color $transition, background-color $transition;
+
+      &:hover {
+        color: $blue-12;
+        background-color: $blue-de;
+      }
+
+      &--active {
+        color: $blue-00;
+
+        &:hover {
+          color: $blue-00;
+          background-color: $blue-de;
+        }
+      }
+    }
+  }
+
+  &__date-input {
+    width: fit-content;
+    margin: 0 auto 20px;
+  }
+}

@@ -1,0 +1,76 @@
+@import 'src/styles/variables';
+
+.select {
+  position: relative;
+  width: fit-content;
+  padding-right: 4px;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    column-gap: 4px;
+    font-size: 14px;
+    line-height: 148%;
+    color: $blue-5e;
+    cursor: pointer;
+    transition: color $transition;
+
+    &--open {
+      color: $blue-12;
+    }
+
+    &-icon {
+      transform: rotate(180deg);
+      fill: $blue-5e;
+      transition: fill $transition;
+
+      &--open {
+        transform: rotate(0);
+        fill: $blue-00;
+      }
+    }
+  }
+
+  &__list {
+    list-style: none;
+    position: absolute;
+    top: 28px;
+    right: -3px;
+    width: 204px;
+    background-color: $white;
+    border: 1px solid $blue-ea;
+    border-radius: 4px;
+    box-shadow: 0 0 26px rgba($blue-e9, 0.8);
+    opacity: 0;
+    pointer-events: none;
+    cursor: pointer;
+
+    &--open {
+      z-index: 1;
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+
+  &__item {
+    padding: 6px 20px;
+    font-size: 14px;
+    color: $blue-89;
+    line-height: 28px;
+    transition: color $transition, background-color $transition;
+
+    &:hover {
+      color: $blue-12;
+      background-color: $blue-de;
+    }
+
+    &--active {
+      color: $blue-00;
+
+      &:hover {
+        color: $blue-00;
+        background-color: $blue-de;
+      }
+    }
+  }
+}

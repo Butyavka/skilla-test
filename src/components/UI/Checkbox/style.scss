@@ -1,0 +1,32 @@
+@import 'src/styles/variables';
+
+.checkbox {
+  display: none;
+
+  &__label {
+    display: block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid $blue-ad;
+    border-radius: 10%;
+    transition: border-color $transition;
+    cursor: pointer;
+
+    &:hover {
+      border-color: $blue-00;
+    }
+
+    &--checked {
+      border: none;
+    }
+  }
+
+  &__icon {
+    fill: $blue-00;
+    transition: fill $transition;
+
+    &:hover {
+      fill: $blue-002;
+    }
+  }
+}

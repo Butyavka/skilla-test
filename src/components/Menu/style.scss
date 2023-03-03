@@ -1,0 +1,65 @@
+@import 'src/styles/variables';
+
+.menu {
+  position: fixed;
+  height: 100%;
+  width: 240px;
+  background-color: $blue-09;
+
+  &__logo {
+    padding: 20px 0 32px 12px;
+    height: 100px;
+  }
+
+  &__item {
+    position: relative;
+    padding: 14px 12px;
+    display: flex;
+    align-items: center;
+    column-gap: 12px;
+    color: rgba($white, 60%);
+    fill: rgba($white, 60%);
+    border-left: 3px solid transparent;
+    transition: color $transition, fill $transition, background-color $transition;
+    cursor: pointer;
+
+    &--active, &:hover {
+      color: $white;
+      fill: $white;
+      background-color: $blue-4b;
+    }
+
+    &--active {
+      border-color: $blue-00;
+    }
+
+    &--new:before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: 12px;
+      transform: translateY(-50%);
+      height: 8px;
+      width: 8px;
+      background-color: $yellow-ff;
+      border-radius: 50%;
+      box-shadow: 0 3px 8px rgba($yellow-ff, 0.5);
+
+    }
+  }
+
+  &__buttons {
+    width: 100%;
+    margin-top: 64px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 32px;
+
+    &-icon {
+      display: block;
+      width: 24px;
+      height: 24px;
+    }
+  }
+}

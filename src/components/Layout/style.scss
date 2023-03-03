@@ -1,0 +1,24 @@
+@import 'src/styles/variables';
+
+.layout {
+  display: flex;
+  min-height: 100vh;
+
+  &__site-bar {
+    position: relative;
+    z-index: 1;
+  }
+
+  &__content {
+    min-height: calc(100vh - 64px);
+    background-color: $blue-ea;
+    overflow: auto;
+
+    &-box {
+      width: 100%;
+      margin-left: 240px;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}

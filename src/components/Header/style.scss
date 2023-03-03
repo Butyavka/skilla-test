@@ -1,0 +1,8 @@
+@import 'src/styles/variables';
+
+.header {
+  position: relative;
+  height: 64px;
+  box-shadow: 0 4px 5px $blue-e9;
+  background-color: $white;
+}

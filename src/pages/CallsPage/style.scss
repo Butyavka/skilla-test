@@ -1,0 +1,14 @@
+@import 'src/styles/variables';
+
+.calls-page {
+  &__filters-list {
+    margin: 14px 0;
+    display: flex;
+    justify-content: end;
+    column-gap: 32px;
+
+    &--top {
+      margin: 20px 0 34px 0;
+    }
+  }
+}

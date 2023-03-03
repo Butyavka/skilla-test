@@ -1,0 +1,181 @@
+@import 'src/styles/variables';
+
+.calls-table{
+  padding-bottom: 57px;
+  background-color: $white;
+  border-radius: 8px;
+  line-height: 21px;
+
+  &__header {
+    height: 64px;
+    padding: 0 40px 0 12px;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: $blue-89;
+
+    & div:last-child {
+      text-align: end;
+    }
+  }
+
+  &__row {
+    height: 65px;
+    display: flex;
+    align-items: center;
+
+    border-top: 1px solid $blue-ea;
+    cursor: pointer;
+    transition: background-color $transition, border $transition;
+
+    &:hover {
+      background-color: $blue-f2;
+
+      .calls-table__input-cell {
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      .calls-table__contact-cell:before {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__input {
+    width: 16px;
+
+    &-cell {
+      width: 16px;
+      opacity: 0;
+      pointer-events: none;
+      margin-left: 12px;
+
+      &:has(.checkbox__label--checked) {
+        opacity: 1;
+        pointer-events: auto;
+      }
+    }
+  }
+
+  &__type {
+    width: 23px;
+    margin: 0 30px 0 12px;
+
+    &-cell {
+      width: 24px;
+      margin: 0 30px 0 12px;
+      display: flex;
+      justify-content: center;
+    }
+
+    &-icon {
+      &--incoming {
+        fill: $blue-00;
+      }
+
+      &--outgoing {
+        fill: $green-00;
+        transform: rotate(180deg);
+      }
+
+      &--missed {
+        fill: $red-ea;
+      }
+    }
+  }
+
+  &__time {
+    width: 41px;
+    margin-right: 48px;
+
+    &-cell {
+      padding-right: 48px;
+    }
+  }
+
+  &__person {
+    width: 68px;
+    margin-right: 60px;
+  }
+
+  &__avatar {
+    width: 32px;
+    height: 32px;
+    margin-right: 10px;
+    border-radius: 50%;
+    overflow: hidden;
+
+    &-img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__icons {
+    margin-right: 6px;
+    display: flex;
+    align-items: center;
+    column-gap: 11px;
+  }
+
+  &__web {
+    &-box {
+      width: 20px;
+      height: 20px;
+      padding: 0 32px;
+      box-sizing: content-box;
+    }
+
+    &-icon {
+      fill: $blue-ad;
+    }
+  }
+
+  &__contact {
+    width: 254px;
+    margin-right: 72px;
+    font-size: 15px;
+
+    &-phone {
+      color: $blue-12;
+      font-size: 15px;
+      text-decoration: none;
+    }
+
+    &-cell {
+      position: relative;
+      width: 254px;
+      padding-right: 64px;
+      box-sizing: content-box;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: -22px;
+        height: 16px;
+        width: 16px;
+        background-image: url("../../../public/static/icons/phone.svg");
+        opacity: 0;
+      }
+    }
+  }
+
+  &__source {
+    width: 197px;
+    padding-right: 14px;
+  }
+
+  &__evaluation {
+    width: 134px;
+    margin-right: 66px;
+  }
+
+  &__record {
+    width: 352px;
+    margin-right: 40px;
+    text-align: end;
+  }
+}

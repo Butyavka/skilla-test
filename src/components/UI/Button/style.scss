@@ -1,0 +1,63 @@
+@import 'src/styles/variables';
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: $blue-00;
+  color: $white;
+  font-family: 'SF Pro Display', sans-serif;
+  border-radius: 4px;
+  border: 1px solid $blue-00;
+  transition: color $transition, background-color $transition;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $blue-002;
+    border-color: $blue-002;
+  }
+
+  &:active {
+    background-color: $blue-27;
+    border-color: $blue-27;
+  }
+
+  &--normal {
+    padding: 9px 24px 11px;
+    font-size: 14px;
+    line-height: 19.6px;
+    font-weight: 500;
+  }
+
+  &--big {
+    width: 200px;
+    padding: 14px 22px;
+    font-size: 16px;
+  }
+
+  &--outlined {
+    background-color: transparent;
+    color: $blue-00;
+
+    &:hover {
+      background-color: $blue-00;
+      color: $white;
+    }
+
+    &:active {
+      border-color: $blue-27;
+      color: $blue-27;
+      background-color: transparent;
+    }
+  }
+
+  &__text {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  &__icon {
+    fill: $blue-d8;
+    fill-opacity: 32%;
+  }
+}
